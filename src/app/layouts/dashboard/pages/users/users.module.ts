@@ -11,6 +11,10 @@ import {MatInputModule} from '@angular/material/input';
 // SELECT
 import {MatSelectModule} from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
+import { PipesModule } from '../pipes/pipes.module';
+import { SharedModule } from '../../../../shared/shared.module';
+import { MatIconModule } from '@angular/material/icon';
+
 
 
 
@@ -27,6 +31,10 @@ import { MatButtonModule } from '@angular/material/button';
     MatSelectModule,
     MatButtonModule,
     ReactiveFormsModule,
+    SharedModule,
+    MatIconModule
+
+
   ],
   exports: [UsersComponent]
 })

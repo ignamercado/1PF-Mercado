@@ -18,12 +18,23 @@ export class UserFormComponent {
       lastName: this.fb.control('', Validators.required),
       email: this.fb.control('', Validators.required),
       password: this.fb.control('', Validators.required),
-      role: this.fb.control('', Validators.required),
+      rol: this.fb.control('', Validators.required),
+      country: this.fb.control('', Validators.required),
+      occupation: this.fb.control('', Validators.required),
+      
     })
   }
 
-onSubmit(): void{
-  this.userSubmitted.emit(this.userForm.value);
+  onSubmit(): void {
+    if (this.userForm.invalid) {
+        this.userForm.markAllAsTouched();
+    } else {
+        const newUser = { ...this.userForm.value, id: new Date().getTime() };
+        this.userSubmitted.emit(newUser);
+        this.userForm.reset();
+    }
 }
 
+
 }
+

@@ -4,12 +4,12 @@
     <!-- SIDEBAR -->
     <!-- SIDEBAR -->
     <mat-drawer #drawer class="example-sidenav" mode="side">
-      <p>Auto-resizing sidenav</p>
+      <p appSizeText>CoderHouse</p>
       @if (showFiller) {
-        <p>Lorem, ipsum dolor sit amet consectetur.</p>
+        <p appSizeText>Más información mostrada</p>
       }
-      <button (click)="showFiller = !showFiller" mat-raised-button>
-        Toggle extra text
+      <button appSizeText (click)="showFiller = !showFiller" mat-raised-button>
+        Apretar para más informacion
       </button>
     </mat-drawer>
     <!-- SIDEBAR -->
@@ -21,7 +21,7 @@
     <div class="example-sidenav-content">
         <!--TOOLBAR -->
         <!--TOOLBAR -->
-        <mat-toolbar color="primary">
+        <mat-toolbar color="accent">
             <button 
             (click)="drawer.toggle()"
                 mat-icon-button 
@@ -29,7 +29,7 @@
                 aria-label="Example icon-button with menu icon">
               <mat-icon>menu</mat-icon>
             </button>
-            <span>My App</span>
+            <span appSizeText>Mi página</span>
             <span class="example-spacer"></span>
             <button
                 mat-icon-button 
@@ -44,9 +44,13 @@
           <!-- TOOLBAR -->
           <!-- TOOLBAR -->
     
-    
+        
         <app-users></app-users>
-    
+        <hr><br>
+        <!-- <app-categories></app-categories> -->
+        <hr>
+        <p class="footerApp">App diseñada por</p>
+        <app-pipes></app-pipes>
     </div>
   <!-- CONTENIDO -->
   <!-- CONTENIDO -->

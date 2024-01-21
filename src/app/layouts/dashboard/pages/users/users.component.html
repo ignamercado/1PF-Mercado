@@ -24,10 +24,33 @@
     </ng-container>
 
     <!-- ROLE Column -->
-    <ng-container matColumnDef="role">
-      <th mat-header-cell *matHeaderCellDef> ROLE </th>
-      <td mat-cell *matCellDef="let user"> {{user.role}} </td>
+    <ng-container matColumnDef="rol">
+      <th mat-header-cell *matHeaderCellDef> Rol </th>
+      <td mat-cell *matCellDef="let user"> {{user.rol}} </td>
     </ng-container>
+    
+    <!-- COUNTRY Column -->
+    <ng-container matColumnDef="country">
+      <th mat-header-cell *matHeaderCellDef> País </th>
+      <td mat-cell *matCellDef="let user"> {{user.country}} </td>
+    </ng-container>
+
+    <!-- OCCUPATION Column -->
+    <ng-container matColumnDef="occupation">
+      <th mat-header-cell *matHeaderCellDef> Profesión </th>
+      <td mat-cell *matCellDef="let user"> {{user.occupation}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Acciones </th>
+      <td mat-cell *matCellDef="let user">
+          <button mat-icon-button color="warn" (click)="deleteUser(user.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+      </td>
+  </ng-container>
+    
+    
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

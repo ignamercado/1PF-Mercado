@@ -6,11 +6,16 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { UsersModule } from './pages/users/users.module';
+import { CategoriesModule } from './pages/categories/categories.module';
+import { CategoriesComponent } from './pages/categories/categories.component';
+import { PipesModule } from './pages/pipes/pipes.module';
+import { SharedModule } from '../../shared/shared.module';
+
 
 
 @NgModule({
   declarations: [
-    DashboardComponent
+    DashboardComponent,
   ],
   imports: [
     CommonModule,
@@ -18,7 +23,10 @@ import { UsersModule } from './pages/users/users.module';
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
-    UsersModule
+    UsersModule,
+    CategoriesModule,
+    PipesModule,
+    SharedModule
   ],
   exports: [DashboardComponent]
 })
