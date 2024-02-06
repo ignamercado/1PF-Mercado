@@ -14,6 +14,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { PipesModule } from '../pipes/pipes.module';
 import { SharedModule } from '../../../../shared/shared.module';
 import { MatIconModule } from '@angular/material/icon';
+import { UsersService } from '../../../../core/services/users.service';
+import { UserDetailComponent } from './pages/user-detail/user-detail.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -21,7 +24,8 @@ import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [
     UsersComponent,
-    UserFormComponent
+    UserFormComponent,
+    UserDetailComponent
   ],
   imports: [
     CommonModule,
@@ -32,10 +36,16 @@ import { MatIconModule } from '@angular/material/icon';
     MatButtonModule,
     ReactiveFormsModule,
     SharedModule,
-    MatIconModule
+    MatIconModule,
+    RouterModule
 
 
   ],
-  exports: [UsersComponent]
+  exports: [UsersComponent],
+  providers: [UsersService,
+  {
+    provide: 'USER_TOKEN',
+    useValue: 'Token recibido para funcionar'
+  }],
 })
 export class UsersModule { }

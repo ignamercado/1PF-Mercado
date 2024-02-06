@@ -1,5 +1,7 @@
 <app-user-form  (userSubmitted)="onUserSubmitted($event)"></app-user-form>
 
+<pre>{{ roles | json }}</pre>
+
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <!--- Note that these columns can be defined in any order.
@@ -44,7 +46,10 @@
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef> Acciones </th>
       <td mat-cell *matCellDef="let user">
-          <button mat-icon-button color="primary" (click)="deleteUser(user.id)">
+          <button [routerLink]="user.id" color="accent" mat-icon-button>
+            <mat-icon>visibility</mat-icon>
+          </button>
+          <button (click)="onDeleteUser(user)"  mat-icon-button color="warn" >
             <mat-icon>delete</mat-icon>
           </button>
       </td>

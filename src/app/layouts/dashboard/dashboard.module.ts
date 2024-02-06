@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -10,7 +10,15 @@ import { CategoriesModule } from './pages/categories/categories.module';
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { PipesModule } from './pages/pipes/pipes.module';
 import { SharedModule } from '../../shared/shared.module';
-
+import { RxjsExampleComponent } from './pages/rxjs-example/rxjs-example.component';
+import { RxjsExampleModule } from './pages/rxjs-example/rxjs-example.module';
+import { RxjsIntroModule } from './pages/rxjs-intro/rxjs-intro.module';
+import { RouterModule } from '@angular/router';
+import { HomeComponent } from './pages/home/home.component';
+import { UsersComponent } from './pages/users/users.component';
+import { MatListModule } from '@angular/material/list'
+import { UserDetailComponent } from './pages/users/pages/user-detail/user-detail.component';
+import { CoursesComponent } from './pages/courses/courses.component';
 
 
 @NgModule({
@@ -26,7 +34,32 @@ import { SharedModule } from '../../shared/shared.module';
     UsersModule,
     CategoriesModule,
     PipesModule,
-    SharedModule
+    SharedModule,
+    RxjsExampleModule,
+    RxjsIntroModule,
+    MatListModule,
+    RouterModule.forChild([
+      {
+        path: 'home',
+        component: HomeComponent
+      },
+      {
+        path: 'users',
+        component: UsersComponent,
+      },
+      {
+        path: 'courses',
+        loadChildren: () => import('./pages/courses/courses.module').then((m) => m.CoursesModule ) 
+      },
+      {
+        path: 'users/:id',
+        component: UserDetailComponent,
+      },
+      {
+      path: '**',
+      redirectTo: 'home'
+      }
+    ])
   ],
   exports: [DashboardComponent]
 })
