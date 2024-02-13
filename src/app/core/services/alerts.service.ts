@@ -3,23 +3,23 @@ import { Subject } from "rxjs";
 import Swal, { SweetAlertOptions } from "sweetalert2";
 
 @Injectable({ providedIn: 'root' })
-export class NotifiersService {
-    private notification$ = new Subject<SweetAlertOptions>();
+export class AlertsService {
+    private alert$ = new Subject<SweetAlertOptions>();
 
     constructor(){
-        this.notification$.subscribe({
+        this.alert$.subscribe({
             next:(options) => {
                 Swal.fire(options);
             }
         });    
     }
 
-    showAlert(options: SweetAlertOptions): void {
-        this.notification$.next(options);
+    showError(options: SweetAlertOptions): void {
+        this.alert$.next(options);
     }
 
     showSuccess(title: string, message: string): void {
-        this.notification$.next({
+        this.alert$.next({
             icon: 'success',
             title,
             text: message

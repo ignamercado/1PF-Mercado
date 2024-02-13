@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable, Subject, Subscriber, filter } from 'rxjs';
 import { LoadingService } from '../../../../core/services/loading.service';
-import { NotifiersService } from '../../../../core/services/notifiers.service';
+import { AlertsService } from '../../../../core/services/alerts.service';
 
 @Component({
   selector: 'app-rxjs-intro',
@@ -16,7 +16,7 @@ export class RxjsIntroComponent {
 
   numbersSubject$ = new Subject()
   
-  constructor(private loadingService: LoadingService, private notifiersService: NotifiersService){
+  constructor(private loadingService: LoadingService, private alertsService: AlertsService){
     // this.subscribeToNumbersObservable();
 
     // this.subscribeToNumbersSubject();
@@ -53,7 +53,7 @@ export class RxjsIntroComponent {
       filter((data) => !!data.length)
     ).subscribe({
       next:  (usuarios) => {
-        this.notifiersService.showSuccess('Realizado','Los usuarios han sido cargados')
+        this.alertsService.showSuccess('Realizado','Los usuarios han sido cargados')
       },
       
       complete: () => {

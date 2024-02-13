@@ -19,6 +19,8 @@ import { UsersComponent } from './pages/users/users.component';
 import { MatListModule } from '@angular/material/list'
 import { UserDetailComponent } from './pages/users/pages/user-detail/user-detail.component';
 import { CoursesComponent } from './pages/courses/courses.component';
+import { adminGuard } from '../../core/guards/admin.guard';
+
 
 
 @NgModule({
@@ -44,12 +46,18 @@ import { CoursesComponent } from './pages/courses/courses.component';
         component: HomeComponent
       },
       {
+        // /dashboard/users
         path: 'users',
-        component: UsersComponent,
+        canActivate: [adminGuard],
+        loadChildren: () =>
+          import('./pages/users/users.module').then((m) => m.UsersModule),
       },
       {
         path: 'courses',
-        loadChildren: () => import('./pages/courses/courses.module').then((m) => m.CoursesModule ) 
+        loadChildren: () => 
+          import('./pages/courses/courses.module').then(
+            (m) => m.CoursesModule
+            ), 
       },
       {
         path: 'users/:id',

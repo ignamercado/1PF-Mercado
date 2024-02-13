@@ -1,39 +1,19 @@
 import { Inject, Injectable } from '@angular/core';
 import { User } from '../../layouts/dashboard/pages/users/models';
 import { Observable, delay, of, tap } from 'rxjs';
-import { NotifiersService } from './notifiers.service';
+import { AlertsService } from './alerts.service';
+import { HttpClient } from '@angular/common/http';
 
 const ROLES_DB: string[] = ['ADMIN', 'USER'];
 
-let USERS_DB: User[] = [
-  {
-    id: 1,
-    firstName: 'Ignacio',
-    lastName: 'Mercado',
-    email: 'ignamercado@gmail.com',
-    password: '123456',
-    rol: 'Admin',
-    country: 'Argentina',
-    occupation: 'Software engineer'
-  },
-  {
-    id: 2,
-    firstName: 'Candelaria',
-    lastName: 'Cervelli',
-    email: 'candecervelli@gmail.com',
-    password: '123456',
-    rol: 'User',
-    country: 'Argentina',
-    occupation: 'Web designer'
-  },
-];
+let USERS_DB: User[] = [];
 
 @Injectable()
 export class UsersService {
-  constructor(private notifiers: NotifiersService) {}
+  constructor(private alerts: AlertsService, private httpClient: HttpClient) {}
 
   getUserById(id: number): Observable<User | undefined>{
-    return of(USERS_DB.find((user) => user.id == id))
+    return of(USERS_DB.find((user) => user.id == id)).pipe(delay(1000))
   }
 
   getRoles(): Observable<string[]>{
@@ -41,7 +21,7 @@ export class UsersService {
   }
 
   getUsers(){
-    return of(USERS_DB).pipe(delay(500))
+    return this.httpClient.get<User[]>('http://localhost:3000/users');
   }
 
   createUser(payload: User) {
@@ -51,6 +31,6 @@ export class UsersService {
 
   deleteUser(userID: number){
     USERS_DB = USERS_DB.filter((user) => user.id !== userID);
-    return this.getUsers().pipe(tap(() => this.notifiers.showSuccess('Realizado','Se eliminó correctamente')));
+    return this.getUsers().pipe(tap(() => this.alerts.showSuccess('Realizado','Se eliminó correctamente')));
   }
 }

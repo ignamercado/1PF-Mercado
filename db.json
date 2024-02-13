@@ -1,0 +1,36 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "firstName": "Ignacio",
+            "lastName": "Mercado",
+            "email": "ignamercado@gmail.com",
+            "password": "123456",
+            "rol": "Admin",
+            "country": "Argentina",
+            "occupation": "Software engineer"
+          },
+          {
+            "id": 2,
+            "firstName": "Candelaria",
+            "lastName": "Cervelli",
+            "email": "candecervelli@gmail.com",
+            "password": "123456",
+            "rol": "User",
+            "country": "Argentina",
+            "occupation": "Web designer"
+          },
+          {
+            "id": 3,
+            "firstName": "Martin",
+            "lastName": "Mercado",
+            "email": "mm@gmail.com",
+            "password": "123456",
+            "rol": "User",
+            "country": "Argentina",
+            "occupation": "Chef"
+          }
+    ],
+    "courses": []
+
+}

@@ -12,6 +12,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatCardModule} from '@angular/material/card';
+import { ValidationErrorsPipe } from './validation-errors.pipe';
 
 
 
@@ -19,7 +21,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
   declarations: [
     FullNamePipe,
     ResaltadoDirective,
-    SizeTextDirective
+    SizeTextDirective,
+    ValidationErrorsPipe,
   ],
   imports: [
     CommonModule
@@ -35,7 +38,11 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatCardModule,
+    ValidationErrorsPipe,
+
+
   ]
 })
 export class SharedModule { }

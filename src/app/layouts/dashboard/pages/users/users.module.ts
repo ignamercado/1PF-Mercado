@@ -17,6 +17,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { UsersService } from '../../../../core/services/users.service';
 import { UserDetailComponent } from './pages/user-detail/user-detail.component';
 import { RouterModule } from '@angular/router';
+import { UsersRoutingModule } from './user-routing.module';
 
 
 
@@ -37,7 +38,8 @@ import { RouterModule } from '@angular/router';
     ReactiveFormsModule,
     SharedModule,
     MatIconModule,
-    RouterModule
+    RouterModule,
+    UsersRoutingModule
 
 
   ],
