@@ -4,6 +4,7 @@ import { UsersService } from '../../../../core/services/users.service';
 import { LoadingService } from '../../../../core/services/loading.service';
 import { forkJoin } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-users',
@@ -28,7 +29,6 @@ constructor(
 
   getPageData(): void{
     this.loadingService.setIsLoading(true)
-
     forkJoin([
       this.usersService.getRoles(),
       this.usersService.getUsers()
@@ -58,8 +58,7 @@ constructor(
   onUserSubmitted(ev: User): void {
     this.loadingService.setIsLoading(true);
     this.usersService
-     .createUser({...ev, id: new Date().getTime()})
-     .subscribe({
+     .createUser(ev).subscribe({
       next: (users) => {
         this.dataSource = [...users];
       },
