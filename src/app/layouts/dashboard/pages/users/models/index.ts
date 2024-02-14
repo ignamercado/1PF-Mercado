@@ -7,4 +7,5 @@ export interface User {
     rol: string;
     country: string;
     occupation: string;
+    token: string;
 }

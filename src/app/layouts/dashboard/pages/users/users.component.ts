@@ -5,6 +5,7 @@ import { LoadingService } from '../../../../core/services/loading.service';
 import { forkJoin } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
+import { PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-users',
@@ -15,14 +16,18 @@ export class UsersComponent  implements OnInit{
   displayedColumns: string[] = ['id', 'fullName', 'email', 'rol', 'country', 'occupation', 'actions'];
   dataSource: User[] = [];
   roles: string[] = [];
+  
+  totalItems = 0;
+  pageSize = 5;
+  currentPage = 1;
 
-constructor(
-  private usersService: UsersService, 
-  private loadingService: LoadingService,
-  private route: ActivatedRoute, 
-  ){
+  constructor(
+    private usersService: UsersService, 
+    private loadingService: LoadingService,
+    private route: ActivatedRoute, 
+    ){
     console.log(this.route.snapshot.queryParams);
-}
+  }
   ngOnInit(): void {
     this.getPageData();
   }
@@ -31,16 +36,35 @@ constructor(
     this.loadingService.setIsLoading(true)
     forkJoin([
       this.usersService.getRoles(),
-      this.usersService.getUsers()
+      this.usersService.paginate(this.currentPage)
+      // this.usersService.getUsers()
     ]).subscribe({
       next: (value) => {
-        this.roles = value[0]
-        this.dataSource = value[1]
+        this.roles = value[0];
+
+        const paginationResult = value[1];
+        this.totalItems = paginationResult.items;
+        this.dataSource = paginationResult.data;
+        // this.dataSource = value[1]
       },
       complete: () => {
         this.loadingService.setIsLoading(false);
       }
     })
+  }
+
+  onPage(ev: PageEvent){
+
+    this.currentPage = ev.pageIndex + 1;
+
+    this.usersService.paginate(this.currentPage, ev.pageSize).subscribe({
+      next: (paginateResult) => {
+        this.totalItems = paginateResult.items;
+        this.dataSource = paginateResult.data;   
+        this.pageSize = ev.pageSize;
+      }
+    })
+
   }
 
   onDeleteUser(ev: User): void {
