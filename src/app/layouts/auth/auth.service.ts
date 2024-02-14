@@ -81,8 +81,6 @@ export class AuthService {
         }
 
     verifyToken() {
-
-
         return this.httpClient.get<User[]>(
             `${environment.apiURL}/users?token=${localStorage.getItem('token')}`
         ).pipe(

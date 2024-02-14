@@ -6,7 +6,7 @@
       "lastName": "Mercado",
       "email": "igna@gmail.com",
       "password": "123456",
-      "rol": "Admin",
+      "rol": "ADMIN",
       "country": "Argentina",
       "occupation": "Web designer",
       "token": "abcdefgh1"
@@ -17,7 +17,7 @@
       "lastName": "Cervelli",
       "email": "cande@gmail.com",
       "password": "123456",
-      "rol": "User",
+      "rol": "USER",
       "country": "Argentina",
       "occupation": "Web designer",
       "token": "abcdefgh2"
@@ -28,7 +28,7 @@
       "lastName": "Mercado",
       "email": "martin@gmail.com",
       "password": "123456",
-      "rol": "User",
+      "rol": "USER",
       "country": "Argentina",
       "occupation": "Chef",
       "token": "abcdefgh3"
@@ -39,7 +39,7 @@
       "lastName": "Mansilla",
       "email": "tomi@gmail.com",
       "password": "123456",
-      "rol": "User",
+      "rol": "USER",
       "country": "Argentina",
       "occupation": "Escritor",
       "token": "abcdefgh4"
@@ -50,7 +50,7 @@
       "lastName": "Rodriguez",
       "email": "loren@gmail.com",
       "password": "123456",
-      "rol": "User",
+      "rol": "USER",
       "country": "Argentina",
       "occupation": "Comercio Ext.",
       "token": "abcdefgh5"
@@ -61,7 +61,7 @@
       "lastName": "Benedetto",
       "email": "gon@gmail.com",
       "password": "123456",
-      "rol": "User",
+      "rol": "USER",
       "country": "Argentina",
       "occupation": "Marketing",
       "token": "abcdefgh6"
