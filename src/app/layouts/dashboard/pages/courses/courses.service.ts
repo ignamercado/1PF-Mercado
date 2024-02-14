@@ -31,7 +31,9 @@ export class CoursesService {
 
     getCourses(){
       this.loadingService.setIsLoading(true)
-      return of(courses).pipe(delay(1500), finalize(() => this.loadingService.setIsLoading(false)));
+      return of(courses).pipe(
+        delay(1500), 
+        finalize(() => this.loadingService.setIsLoading(false)));
    } 
 
    createCourse(data: Course ){

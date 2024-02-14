@@ -1,4 +1,4 @@
-import { LOCALE_ID, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -27,10 +27,6 @@ import { HttpClientModule } from '@angular/common/http';
     
   ],
   providers: [
-    {
-      provide: LOCALE_ID,
-      useValue: 'es-AR',
-    },
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
       useValue: {

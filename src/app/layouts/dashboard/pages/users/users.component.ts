@@ -44,16 +44,18 @@ constructor(
   }
 
   onDeleteUser(ev: User): void {
-    this.loadingService.setIsLoading(true)
+    this.loadingService.setIsLoading(true);
     this.usersService.deleteUser(ev.id).subscribe({
       next: (users) => {
-       this.dataSource = [...users];
+        this.dataSource = [...users];
       },
       complete: () => {
         this.loadingService.setIsLoading(false);
       }    
     })
   }
+
+  
   
   onUserSubmitted(ev: User): void {
     this.loadingService.setIsLoading(true);

@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { User } from '../../layouts/dashboard/pages/users/models';
 import { Observable, catchError, delay, mergeMap, of, tap } from 'rxjs';
 import { AlertsService } from './alerts.service';
@@ -44,13 +44,9 @@ export class UsersService {
     );
   }
 
-  deleteUser(userID: number){
-    // USERS_DB = USERS_DB.filter((user) => user.id !== userID);
-    // return this.getUsers().pipe(
-    //   tap(() => this.alerts.showSuccess('Realizado','Se eliminó correctamente')));
-  
+  deleteUser(userID: number) {
     return this.httpClient
-    .delete<User>(`${environment.apiURL}/users/${userID}`)
-    .pipe(mergeMap(() => this.getUsers()))
+      .delete<User>(`${environment.apiURL}/users/${userID}`)
+      .pipe(mergeMap(() => this.getUsers()));
   }
 }
