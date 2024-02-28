@@ -65,7 +65,31 @@
       "country": "Argentina",
       "occupation": "Marketing",
       "token": "abcdefgh6"
+    },
+    {
+      "id": "7",
+      "firstName": "Bernardo",
+      "lastName": "Cima",
+      "email": "bernardo@gmail.com",
+      "password": "123456",
+      "rol": "ALUMNO",
+      "country": "Argentina",
+      "occupation": "Ingeniero Civil",
+      "token": "abcdefgh7"
     }
   ],
-  "courses": []
+  "courses": [
+    {
+        "id": 1,
+        "name": "Nest.js",
+        "createdAt": "2024-02-27T15:02:01.073Z"   
+    }
+  ],
+  "registrations": [
+    {
+      "id": 1,
+      "userId": "2",
+      "courseId": 2
+    }
+  ]
 }

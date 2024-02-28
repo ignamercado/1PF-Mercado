@@ -1,0 +1,11 @@
+<div *ngIf="isLoading$ | async; else notLoading">
+    CARGANDO..
+</div>
+
+<ng-template #notLoading>
+    <button (click)="createRegistration()" mat-flat-button type="button" color="accent">
+      Crear inscripción  
+    </button>
+
+    <pre>{{ registrations$ | async | json }}</pre>
+</ng-template>

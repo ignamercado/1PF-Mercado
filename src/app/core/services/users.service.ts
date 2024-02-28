@@ -67,4 +67,8 @@ export class UsersService {
       .delete<User>(`${environment.apiURL}/users/${userID}`)
       .pipe(mergeMap(() => this.getUsers()));
   }
+
+  getAllAlumnos(): Observable<User[]> {
+    return this.httpClient.get<User[]>('http://localhost:3000/users?rol=ALUMNO');
+  }
 }

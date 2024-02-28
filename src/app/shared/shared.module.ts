@@ -15,6 +15,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatCardModule} from '@angular/material/card';
 import { ValidationErrorsPipe } from './validation-errors.pipe';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatSelect, MatSelectModule } from '@angular/material/select';
 
 
 
@@ -42,7 +43,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatDatepickerModule,
     MatCardModule,
     ValidationErrorsPipe,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSelectModule
 
 
   ]
