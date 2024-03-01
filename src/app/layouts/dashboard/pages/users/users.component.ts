@@ -26,7 +26,6 @@ export class UsersComponent  implements OnInit{
     private loadingService: LoadingService,
     private route: ActivatedRoute, 
     ){
-    console.log(this.route.snapshot.queryParams);
   }
   ngOnInit(): void {
     this.getPageData();

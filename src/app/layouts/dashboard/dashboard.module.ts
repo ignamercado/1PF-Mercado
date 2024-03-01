@@ -60,13 +60,6 @@ import { adminGuard } from '../../core/guards/admin.guard';
             ), 
       },
       {
-        path: 'clase-16',
-        loadChildren: () => 
-          import('./pages/clase-16-redux/clase-16-redux.module').then(
-            (m) => m.Clase16ReduxModule
-            ), 
-      },
-      {
         path: 'registrations',
         loadChildren: () =>
           import('./pages/registrations/registrations.module').then((m) => m.RegistrationsModule),

@@ -7,7 +7,7 @@ import { AbstractControl, ValidationErrors } from '@angular/forms';
 export class ValidationErrorsPipe implements PipeTransform {
 
   transform(errors?: ValidationErrors | null, ...args: unknown[]): unknown {
-   console.log(errors);
+   
 
    if (!!errors) {
     if (errors['required']) return 'Este campo es requerido'

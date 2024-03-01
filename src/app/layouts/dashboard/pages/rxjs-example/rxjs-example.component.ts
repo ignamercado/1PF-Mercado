@@ -17,10 +17,8 @@ getUsersSubscription?: Subscription;
   constructor(){
 
     setTimeout(() => {
-      console.log('Timeout!')
     }, 1000 );
 
-    console.log('---FIN---')
 
     let loading = false;
 
@@ -42,7 +40,6 @@ getUsersSubscription?: Subscription;
 
     this.getUsersSubscription = getUsers$.subscribe({
       next: (respuesta) => {
-        console.log(respuesta)
         this.users = respuesta;
       },
       error: () => {},

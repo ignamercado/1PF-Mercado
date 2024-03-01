@@ -9,6 +9,7 @@ import { StoreModule } from '@ngrx/store';
 import { registrationsFeature } from './store/registrations.reducer';
 import { SharedModule } from '../../../../shared/shared.module';
 import { RegistrationDialogComponent } from './components/registration-dialog/registration-dialog.component';
+import { CoursesService } from '../courses/courses.service';
 
 
 
@@ -23,6 +24,7 @@ import { RegistrationDialogComponent } from './components/registration-dialog/re
     SharedModule,
     StoreModule.forFeature(registrationsFeature),
     EffectsModule.forFeature([RegistrationsEffects]),
-  ]
+  ],
+  providers: [CoursesService]
 })
 export class RegistrationsModule { }

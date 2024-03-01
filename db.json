@@ -80,9 +80,9 @@
   ],
   "courses": [
     {
-        "id": 1,
-        "name": "Nest.js",
-        "createdAt": "2024-02-27T15:02:01.073Z"   
+      "id": 1,
+      "name": "Nest.js",
+      "createdAt": "2024-02-27T15:02:01.073Z"
     }
   ],
   "registrations": [
@@ -90,6 +90,21 @@
       "id": 1,
       "userId": "2",
       "courseId": 2
+    },
+    {
+      "id": "a1b8",
+      "userId": "5",
+      "productId": 2
+    },
+    {
+      "id": "d4fb",
+      "productId": "2",
+      "userId": "7"
+    },
+    {
+      "id": "110b",
+      "productId": "",
+      "userId": "7"
     }
   ]
 }

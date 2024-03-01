@@ -69,6 +69,7 @@ export class UsersService {
   }
 
   getAllAlumnos(): Observable<User[]> {
-    return this.httpClient.get<User[]>('http://localhost:3000/users?rol=ALUMNO');
+    return this.httpClient.get<User[]>(
+      'http://localhost:3000/users?rol=ALUMNO');
   }
 }

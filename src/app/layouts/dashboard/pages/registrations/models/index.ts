@@ -8,3 +8,8 @@ export interface Registration {
     user?: User;
     course?: Course;
 }
+
+export interface CreateRegistrationData {
+    userId: string | number | null;
+    productId: string | number | null;
+}

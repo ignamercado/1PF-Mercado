@@ -20,7 +20,7 @@ export class RegistrationsComponent {
   constructor (private store: Store, private matDialog: MatDialog) {
     this.registrations$ = this.store.select(selectRegistrations);
     this.isLoading$ = this.store.select(selectRegistrationsIsLoading)
-    this.store.dispatch(RegistrationsActions.loadRegistrationss())
+    this.store.dispatch(RegistrationsActions.loadRegistrations())
   
   }
 

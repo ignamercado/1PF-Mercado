@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { delay, finalize, of } from "rxjs";
 import { Course } from "./models";
 import { LoadingService } from "../../../../core/services/loading.service";
+import { HttpClient } from "@angular/common/http";
 
 let courses: Course[] = [
         {
@@ -25,15 +26,15 @@ let courses: Course[] = [
 @Injectable()
 export class CoursesService {
 
-    constructor(private loadingService: LoadingService){
+    constructor(private loadingService: LoadingService, private httpClient: HttpClient){
 
     }
 
     getCourses(){
       this.loadingService.setIsLoading(true)
-      return of(courses).pipe(
-        delay(1500), 
-        finalize(() => this.loadingService.setIsLoading(false)));
+      return this.httpClient
+      .get<Course[]>('http://localhost:3000/courses')
+      .pipe(finalize(() => this.loadingService.setIsLoading(false)));
    } 
 
    createCourse(data: Course ){
