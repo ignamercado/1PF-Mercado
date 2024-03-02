@@ -41,5 +41,7 @@ export class RegistrationsComponent {
    createRegistration():void {
     this.matDialog.open(RegistrationDialogComponent)
   }
+
+  
 }
 

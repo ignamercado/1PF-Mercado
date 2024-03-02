@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffebee; /* Color de fondo rosa */
+    color: #333; /* Color de texto */
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff; /* Color de fondo blanco */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  h1 {
+    color: #e91e63; /* Color de texto rosa */
+  }
+  
+  p {
+    line-height: 1.6;
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e91e63; /* Color de fondo rosa */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #c2185b; /* Color de fondo rosa oscuro al pasar el cursor */
+  }
+  
+  .additional-content {
+    background-color: #fff; /* Color de fondo blanco */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+  }
+  
+  h2 {
+    color: #e91e63; /* Color de texto rosa */
+  }
+  
+  .subtituloHome{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  ul li {
+    margin-bottom: 10px;
+  }
+  
+  ul li:before {
+    content: "\2022"; /* Círculo de viñeta */
+    color: #e91e63; /* Color de texto rosa */
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+  

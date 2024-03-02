@@ -132,7 +132,7 @@
     {
       "id": "dj43",
       "userId": "2",
-      "courseId": 2,
+      "courseId": 1,
       "productId": 2
     },
     {
@@ -143,30 +143,14 @@
     },
     {
       "id": "d4fb",
-      "courseId": 2,
+      "courseId": 3,
       "productId": "2",
-      "userId": "7"
-    },
-    {
-      "id": "110b",
-      "courseId": 2,
-      "productId": "3",
       "userId": "7"
     },
     {
       "id": "edc8",
       "productId": 3,
       "userId": "9"
-    },
-    {
-      "id": "a6c7",
-      "courseId": 2,
-      "userId": "10"
-    },
-    {
-      "id": "05ff",
-      "courseId": 2,
-      "userId": "8"
     }
   ]
 }
