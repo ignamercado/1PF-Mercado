@@ -132,21 +132,25 @@
     {
       "id": 1,
       "userId": "2",
-      "courseId": 2
+      "courseId": 2,
+      "productId": 2
     },
     {
       "id": "a1b8",
       "userId": "5",
-      "productId": 2
+      "courseId": 1,
+      "productId": 3
     },
     {
       "id": "d4fb",
+      "courseId": 3,
       "productId": "2",
       "userId": "7"
     },
     {
       "id": "110b",
-      "productId": "",
+      "courseId": 2,
+      "productId": "3",
       "userId": "7"
     }
   ]
