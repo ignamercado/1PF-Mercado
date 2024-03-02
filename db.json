@@ -76,12 +76,55 @@
       "country": "Argentina",
       "occupation": "Ingeniero Civil",
       "token": "abcdefgh7"
+    },
+    {
+      "id": "8",
+      "firstName": "Gaspar",
+      "lastName": "Quintana",
+      "email": "gaspar@gmail.com",
+      "password": "123456",
+      "rol": "ALUMNO",
+      "country": "Argentina",
+      "occupation": "Ingeniero Agronomo",
+      "token": "abcdefgh8"
+    },
+    {
+      "id": "9",
+      "firstName": "Gonzalo",
+      "lastName": "Crego",
+      "email": "gonlor@gmail.com",
+      "password": "123456",
+      "rol": "ALUMNO",
+      "country": "Argentina",
+      "occupation": "Ssr Backend",
+      "token": "abcdefgh9"
+    },
+    {
+      "id": "10",
+      "firstName": "Benjamin",
+      "lastName": "Zenklusen",
+      "email": "benja@gmail.com",
+      "password": "123456",
+      "rol": "ALUMNO",
+      "country": "Argentina",
+      "occupation": "Carnicero",
+      "token": "abcdefgh10"
     }
   ],
   "courses": [
     {
       "id": 1,
       "name": "Nest.js",
+      "createdAt": "2024-02-27T15:02:01.073Z"
+    },
+    {
+      "id": 2,
+      "name": "AWS Cloud",
+      "createdAt": "2024-02-27T15:02:01.073Z"
+    },
+    {
+      "id": 3,
+      "name": "React",
       "createdAt": "2024-02-27T15:02:01.073Z"
     }
   ],
