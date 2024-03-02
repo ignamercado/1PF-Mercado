@@ -17,7 +17,7 @@ export class RegistrationsComponent {
   registrations$: Observable<Registration[]>;
   isLoading$: Observable<boolean>;
 
-  columnas: string[] = ['id', 'nombreAlumno', 'cursoId'];
+  columnas: string[] = ['id', 'nombreAlumno', 'cursoId', 'actions'];
   dataSource: Registration[] = [];
 
 
@@ -38,9 +38,7 @@ export class RegistrationsComponent {
   
   }
 
-
-
-  createRegistration():void {
+   createRegistration():void {
     this.matDialog.open(RegistrationDialogComponent)
   }
 }
