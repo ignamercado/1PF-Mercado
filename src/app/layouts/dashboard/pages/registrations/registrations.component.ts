@@ -17,10 +17,24 @@ export class RegistrationsComponent {
   registrations$: Observable<Registration[]>;
   isLoading$: Observable<boolean>;
 
+  columnas: string[] = ['nombreAlumno', 'apellidoAlumno', 'cursoId'];
+  dataSource: Registration[] = [];
+
+
+
+
   constructor (private store: Store, private matDialog: MatDialog) {
     this.registrations$ = this.store.select(selectRegistrations);
     this.isLoading$ = this.store.select(selectRegistrationsIsLoading)
     this.store.dispatch(RegistrationsActions.loadRegistrations())
+
+    this.registrations$.subscribe({
+      next: (data) => {
+        this.dataSource = data;
+        console.log(this.dataSource)
+      }
+    })
+
   
   }
 
