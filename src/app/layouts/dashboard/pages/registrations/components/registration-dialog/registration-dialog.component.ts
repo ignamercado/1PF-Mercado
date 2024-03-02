@@ -33,7 +33,7 @@ export class RegistrationDialogComponent {
       // }
 
     this.registrationForm = this.formBuilder.group({
-      productId: this.formBuilder.control('', [Validators.required]),
+      courseId: this.formBuilder.control('', [Validators.required]),
       userId: this.formBuilder.control('', [Validators.required]),
     })
 
